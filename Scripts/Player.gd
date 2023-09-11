@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 400
+class_name Player
 
-#@onready var active = false
+@export var speed = 400
 
 func _ready():
 	pass
@@ -15,11 +15,11 @@ func _process(delta):
 	else:
 		velocity.y = move_toward(velocity.y, 0, speed)
 	
-	print(direction)
-	print(speed)
-	
 	move_and_slide()
 #
+#func _on_area_entered(area):
+#	if area is Ball:
+#		player_hit_ball.emit()
 #	if active == true:
 #		velocity.y = speed
 #	else:

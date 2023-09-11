@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bm47ecakgvaht" path="res://Scenes/player.tscn" id="2_sviga"]
 [ext_resource type="PackedScene" uid="uid://dem8r3hbjslas" path="res://Scenes/opponent.tscn" id="3_3p2e0"]
 [ext_resource type="PackedScene" uid="uid://dplp1whjc0da2" path="res://Scenes/ball.tscn" id="4_pkfsu"]
-[ext_resource type="PackedScene" uid="uid://b0vqhkc3ftvf" path="res://Scenes/bumper.tscn" id="5_cc7jf"]
+[ext_resource type="PackedScene" uid="uid://d382cukj8imbd" path="res://Scenes/bumper.tscn" id="5_cc7jf"]
 [ext_resource type="PackedScene" uid="uid://ebpheaq3qoqu" path="res://Scenes/goal_zone_opponent.tscn" id="6_vd7l1"]
 [ext_resource type="PackedScene" uid="uid://df0vdt3vkxn2b" path="res://Scenes/goal_zone_player.tscn" id="7_lg0xi"]
 [ext_resource type="PackedScene" uid="uid://crveab7iw7qmp" path="res://Scenes/hud.tscn" id="8_gujps"]
@@ -26,7 +26,7 @@ position = Vector2(545, 296)
 [node name="Bumper" parent="OutsideWindowElements" instance=ExtResource("5_cc7jf")]
 
 [node name="Bumper2" parent="OutsideWindowElements" instance=ExtResource("5_cc7jf")]
-position = Vector2(0, 663)
+position = Vector2(0, 664)
 
 [node name="GoalZoneOpponent" parent="OutsideWindowElements" instance=ExtResource("6_vd7l1")]
 
@@ -35,3 +35,6 @@ position = Vector2(0, 663)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("8_gujps")]
+
+[connection signal="ball_hit_bumper" from="Ball" to="." method="_on_ball_ball_hit_bumper"]
+[connection signal="ball_hit_player" from="Ball" to="." method="_on_ball_ball_hit_player"]

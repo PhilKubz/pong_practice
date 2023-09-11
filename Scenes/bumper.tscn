@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0vqhkc3ftvf"]
+[gd_scene load_steps=4 format=3 uid="uid://d382cukj8imbd"]
 
 [ext_resource type="Texture2D" uid="uid://cltn2ytu5m282" path="res://Assets/Textures/Player/Paddle.png" id="1_7ofyl"]
+[ext_resource type="Script" path="res://Scripts/bumper.gd" id="1_lxcdv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv6j2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fun4"]
 size = Vector2(1152, 15)
 
-[node name="Bumper" type="StaticBody2D"]
+[node name="Bumper" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_lxcdv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(594.631, -6.99997)
@@ -15,4 +19,6 @@ texture = ExtResource("1_7ofyl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(576, -7.5)
-shape = SubResource("RectangleShape2D_iv6j2")
+shape = SubResource("RectangleShape2D_5fun4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
