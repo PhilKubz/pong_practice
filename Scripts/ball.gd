@@ -2,7 +2,7 @@ extends RigidBody2D
 
 class_name Ball
 
-signal ball_hit_bumper
+#signal ball_hit_bumper
 signal ball_hit_player
 
 
@@ -15,13 +15,13 @@ func _physics_process(delta):
 	if velocity == Vector2(0, 0):
 		print("Ball dead")
 
-func _on_area_entered(area):
-	if area is Bumper:
-		ball_hit_bumper.emit()
-		print("bumper hit")
-	if area is Player or Opponent:
-		ball_hit_player.emit()
-		print("paddle hit")
+#func _on_area_entered(area):
+###	if area is Bumper:
+###		ball_hit_bumper.emit()
+###		print("bumper hit")
+#	if area is Player or Opponent:
+#		ball_hit_player.emit()
+#		print("paddle hit")
 		
 
 #	if collision_info.collider is Player or Opponent:

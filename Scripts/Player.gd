@@ -16,6 +16,9 @@ func _process(delta):
 		velocity.y = move_toward(velocity.y, 0, speed)
 	
 	move_and_slide()
+	
+	
+
 #
 #func _on_area_entered(area):
 #	if area is Ball:

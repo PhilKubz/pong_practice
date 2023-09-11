@@ -13,18 +13,35 @@ func _process(delta: float) -> void:
 
 
 # Hit Functions to handle ball movement/direciton
+
+#Paddle Hits
 func _on_ball_ball_hit_player():
 	paddle_hit()
+	print("paddle player hit")
+
+func _on_opponent_ball_hit_paddle():
+	paddle_hit()
+	print("paddle opponent hit")
 
 
-func _on_ball_ball_hit_bumper():
+# Bumper Hits
+func _on_bumper_ball_hit_bumper():
 	bumper_hit()
-	print("bumper hit")
+	print("bumper top hit")
+
+func _on_bumper_2_ball_hit_bumper():
+	bumper_hit()
+	print("bumper bottom hit")
 	
 	
-	
+# Actions taken on ball hits
 func paddle_hit():
-	ball.velocity.y *= -1
+	ball.velocity.x *= -1
 
 func bumper_hit():
-	ball.velocity.x *= -1
+	ball.velocity.y *= -1
+
+
+
+
+

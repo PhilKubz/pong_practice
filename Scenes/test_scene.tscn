@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn8biyu22etci"]
+
+[ext_resource type="PackedScene" uid="uid://dplp1whjc0da2" path="res://Scenes/ball.tscn" id="1_e73e4"]
+[ext_resource type="PackedScene" uid="uid://dem8r3hbjslas" path="res://Scenes/opponent.tscn" id="2_pdbko"]
+[ext_resource type="PackedScene" uid="uid://d382cukj8imbd" path="res://Scenes/bumper.tscn" id="3_bg23n"]
+
+[node name="Test Scene" type="Node2D"]
+
+[node name="Ball" parent="." instance=ExtResource("1_e73e4")]
+position = Vector2(469, 312)
+
+[node name="Opponent" parent="." instance=ExtResource("2_pdbko")]
+position = Vector2(1124, 439)
+
+[node name="Bumper" parent="." instance=ExtResource("3_bg23n")]
+position = Vector2(1, 663)
