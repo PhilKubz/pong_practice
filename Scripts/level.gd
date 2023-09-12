@@ -1,9 +1,10 @@
 extends Node2D
 
-@onready var ball_reference : Ball = get_node("res://Scenes/ball.tscn")
+#@onready var ball_reference : Ball = get_node("res://Scenes/ball.tscn")
 @onready var player = $Player
 @onready var ball = $Ball
 @onready var opponent = $Opponent
+
 func _ready() -> void:
 	pass 
 

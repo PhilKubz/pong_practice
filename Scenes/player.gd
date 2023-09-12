@@ -3,7 +3,8 @@ extends Paddle
 class_name Player
 
 func ready():
-	print("player exists")
+	pass
+#	print("player exists")
 
 
 
