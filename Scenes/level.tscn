@@ -27,7 +27,7 @@ position = Vector2(545, 296)
 [node name="Bumper" parent="OutsideWindowElements" instance=ExtResource("5_cc7jf")]
 
 [node name="Bumper2" parent="OutsideWindowElements" instance=ExtResource("5_cc7jf")]
-position = Vector2(0, 663)
+position = Vector2(0, 664)
 
 [node name="GoalZoneOpponent" parent="OutsideWindowElements" instance=ExtResource("6_vd7l1")]
 
@@ -36,7 +36,7 @@ position = Vector2(0, 663)
 [node name="WindowEdge" parent="OutsideWindowElements" instance=ExtResource("8_uq2fi")]
 
 [node name="WindowEdge2" parent="OutsideWindowElements" instance=ExtResource("8_uq2fi")]
-position = Vector2(0, 663)
+position = Vector2(0, 664)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -46,3 +46,5 @@ position = Vector2(0, 663)
 [connection signal="ball_hit_paddle" from="Opponent" to="." method="_on_opponent_ball_hit_paddle"]
 [connection signal="ball_hit_bumper" from="OutsideWindowElements/Bumper" to="." method="_on_bumper_ball_hit_bumper"]
 [connection signal="ball_hit_bumper" from="OutsideWindowElements/Bumper2" to="." method="_on_bumper_2_ball_hit_bumper"]
+[connection signal="goal_score_opponent" from="OutsideWindowElements/GoalZoneOpponent" to="." method="_on_goal_zone_opponent_goal_score_opponent"]
+[connection signal="goal_score_player" from="OutsideWindowElements/GoalZonePlayer" to="." method="_on_goal_zone_player_goal_score_player"]

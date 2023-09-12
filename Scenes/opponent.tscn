@@ -8,7 +8,7 @@ size = Vector2(28, 141)
 
 [node name="Opponent" type="Area2D"]
 collision_layer = 2
-collision_mask = 20
+collision_mask = 28
 script = ExtResource("1_kfwwn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

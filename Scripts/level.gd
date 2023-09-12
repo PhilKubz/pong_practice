@@ -44,3 +44,11 @@ func bumper_hit():
 
 
 
+# Goal / Scoring handling
+
+func _on_goal_zone_opponent_goal_score_opponent():
+	pass # Replace with function body.
+
+
+func _on_goal_zone_player_goal_score_player():
+	pass # Replace with function body.

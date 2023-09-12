@@ -7,7 +7,6 @@ func ready():
 #	print("player exists")
 
 
-
 func _process(delta):
 	var motion = Vector2()
 	var direction := Input.get_axis("move_up", "move_down")
@@ -18,3 +17,6 @@ func _process(delta):
 		motion.y = move_toward(motion.y, 0, speed * delta)
 
 	translate(motion * delta)
+
+func _on_area_entered(area):
+	print(area)
