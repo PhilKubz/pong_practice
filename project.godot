@@ -44,6 +44,8 @@ move_down={
 2d_physics/layer_2="opponent"
 2d_physics/layer_3="ball"
 2d_physics/layer_4="bumper"
+2d_physics/layer_5="window_edge"
+2d_physics/layer_6="goal_zone"
 
 [rendering]
 

@@ -6,6 +6,8 @@
 size = Vector2(31, 832)
 
 [node name="GoalZonePlayer" type="Area2D"]
+collision_layer = 33
+collision_mask = 4
 script = ExtResource("1_t1ale")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

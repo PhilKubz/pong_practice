@@ -1,22 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://6kpvsqpxd4fn"]
+[gd_scene load_steps=10 format=3 uid="uid://6kpvsqpxd4fn"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_w0pni"]
-[ext_resource type="PackedScene" uid="uid://bm47ecakgvaht" path="res://Scenes/player.tscn" id="2_sviga"]
-[ext_resource type="PackedScene" uid="uid://dem8r3hbjslas" path="res://Scenes/opponent.tscn" id="3_3p2e0"]
+[ext_resource type="PackedScene" uid="uid://dn15ronih1sjs" path="res://Scenes/player.tscn" id="2_sviga"]
+[ext_resource type="PackedScene" uid="uid://kkv8w25tartj" path="res://Scenes/opponent.tscn" id="3_3p2e0"]
 [ext_resource type="PackedScene" uid="uid://dplp1whjc0da2" path="res://Scenes/ball.tscn" id="4_pkfsu"]
 [ext_resource type="PackedScene" uid="uid://d382cukj8imbd" path="res://Scenes/bumper.tscn" id="5_cc7jf"]
 [ext_resource type="PackedScene" uid="uid://ebpheaq3qoqu" path="res://Scenes/goal_zone_opponent.tscn" id="6_vd7l1"]
 [ext_resource type="PackedScene" uid="uid://df0vdt3vkxn2b" path="res://Scenes/goal_zone_player.tscn" id="7_lg0xi"]
 [ext_resource type="PackedScene" uid="uid://crveab7iw7qmp" path="res://Scenes/hud.tscn" id="8_gujps"]
+[ext_resource type="PackedScene" uid="uid://bmaygdqfwad0e" path="res://Scenes/window_edge.tscn" id="8_uq2fi"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_w0pni")
 
 [node name="Player" parent="." instance=ExtResource("2_sviga")]
-position = Vector2(57, 112)
+position = Vector2(47, 546)
 
 [node name="Opponent" parent="." instance=ExtResource("3_3p2e0")]
-position = Vector2(1095, 447)
+position = Vector2(1096, 447)
 
 [node name="Ball" parent="." instance=ExtResource("4_pkfsu")]
 position = Vector2(545, 296)
@@ -32,10 +33,16 @@ position = Vector2(0, 663)
 
 [node name="GoalZonePlayer" parent="OutsideWindowElements" instance=ExtResource("7_lg0xi")]
 
+[node name="WindowEdge" parent="OutsideWindowElements" instance=ExtResource("8_uq2fi")]
+
+[node name="WindowEdge2" parent="OutsideWindowElements" instance=ExtResource("8_uq2fi")]
+position = Vector2(0, 663)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("8_gujps")]
 
+[connection signal="ball_hit_paddle" from="Player" to="." method="_on_player_ball_hit_paddle"]
 [connection signal="ball_hit_paddle" from="Opponent" to="." method="_on_opponent_ball_hit_paddle"]
 [connection signal="ball_hit_bumper" from="OutsideWindowElements/Bumper" to="." method="_on_bumper_ball_hit_bumper"]
 [connection signal="ball_hit_bumper" from="OutsideWindowElements/Bumper2" to="." method="_on_bumper_2_ball_hit_bumper"]

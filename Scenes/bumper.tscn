@@ -8,7 +8,7 @@ size = Vector2(1152, 15)
 
 [node name="Bumper" type="Area2D"]
 collision_layer = 8
-collision_mask = 4
+collision_mask = 7
 script = ExtResource("1_lxcdv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
