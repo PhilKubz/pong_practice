@@ -3,7 +3,7 @@ extends RigidBody2D
 class_name Ball
 
 #signal ball_hit_bumper
-signal ball_hit_player
+signal ball_hit_paddle
 
 
 @export var ball_speed = 300
@@ -14,6 +14,7 @@ func _physics_process(delta):
 #	print(velocity)
 	if velocity == Vector2(0, 0):
 		print("Ball dead")
+
 
 #func _on_area_entered(area):
 ###	if area is Bumper:
@@ -29,3 +30,8 @@ func _physics_process(delta):
 #
 #	if collision_info.collider is Bumper:
 #		velocity.y *= -1
+func _on_body_entered(body):
+	if body is Paddle:
+		ball_hit_paddle.emit()
+		print("Ball hit paddle")
+

@@ -52,3 +52,7 @@ func _on_goal_zone_opponent_goal_score_opponent():
 
 func _on_goal_zone_player_goal_score_player():
 	pass # Replace with function body.
+
+
+func _on_ball_body_entered(body: Node) -> void:
+	pass # Replace with function body.

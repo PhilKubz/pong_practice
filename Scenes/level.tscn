@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://6kpvsqpxd4fn"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_w0pni"]
-[ext_resource type="PackedScene" uid="uid://dn15ronih1sjs" path="res://Scenes/player.tscn" id="2_sviga"]
-[ext_resource type="PackedScene" uid="uid://kkv8w25tartj" path="res://Scenes/opponent.tscn" id="3_3p2e0"]
+[ext_resource type="PackedScene" uid="uid://cuc20ywibbdem" path="res://Scenes/player.tscn" id="2_sviga"]
+[ext_resource type="PackedScene" uid="uid://ccfg4dymlty1h" path="res://Scenes/opponent.tscn" id="3_3p2e0"]
 [ext_resource type="PackedScene" uid="uid://dplp1whjc0da2" path="res://Scenes/ball.tscn" id="4_pkfsu"]
 [ext_resource type="PackedScene" uid="uid://d382cukj8imbd" path="res://Scenes/bumper.tscn" id="5_cc7jf"]
 [ext_resource type="PackedScene" uid="uid://ebpheaq3qoqu" path="res://Scenes/goal_zone_opponent.tscn" id="6_vd7l1"]
