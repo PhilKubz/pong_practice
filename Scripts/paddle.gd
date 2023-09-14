@@ -4,7 +4,7 @@ class_name Paddle
 
 signal ball_hit_paddle
 
-@export var speed = 400
+@export var paddle_speed = 400
 
 
 func _ready():

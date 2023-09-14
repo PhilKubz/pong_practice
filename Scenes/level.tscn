@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_w0pni"]
 [ext_resource type="PackedScene" uid="uid://cuc20ywibbdem" path="res://Scenes/player.tscn" id="2_sviga"]
-[ext_resource type="PackedScene" uid="uid://ccfg4dymlty1h" path="res://Scenes/opponent.tscn" id="3_3p2e0"]
-[ext_resource type="PackedScene" uid="uid://dplp1whjc0da2" path="res://Scenes/ball.tscn" id="4_pkfsu"]
+[ext_resource type="Script" path="res://Scripts/opponent.gd" id="3_btd88"]
+[ext_resource type="PackedScene" uid="uid://dfgu7gghtl0x3" path="res://Scenes/ball.tscn" id="4_pkfsu"]
 [ext_resource type="PackedScene" uid="uid://d382cukj8imbd" path="res://Scenes/bumper.tscn" id="5_cc7jf"]
 [ext_resource type="PackedScene" uid="uid://ebpheaq3qoqu" path="res://Scenes/goal_zone_opponent.tscn" id="6_vd7l1"]
 [ext_resource type="PackedScene" uid="uid://df0vdt3vkxn2b" path="res://Scenes/goal_zone_player.tscn" id="7_lg0xi"]
@@ -16,11 +16,14 @@ script = ExtResource("1_w0pni")
 [node name="Player" parent="." instance=ExtResource("2_sviga")]
 position = Vector2(47, 546)
 
-[node name="Opponent" parent="." instance=ExtResource("3_3p2e0")]
-position = Vector2(1096, 447)
+[node name="OpponentPaddle" parent="." node_paths=PackedStringArray("ball") instance=ExtResource("2_sviga")]
+position = Vector2(1096, 546)
+script = ExtResource("3_btd88")
+paddle_speed_opponent = 19000
+ball = NodePath("../Ball")
 
 [node name="Ball" parent="." instance=ExtResource("4_pkfsu")]
-position = Vector2(545, 296)
+position = Vector2(568, 311)
 
 [node name="OutsideWindowElements" type="Node" parent="."]
 
@@ -42,8 +45,11 @@ position = Vector2(0, 664)
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("8_gujps")]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 325)
+
 [connection signal="ball_hit_paddle" from="Player" to="." method="_on_player_ball_hit_paddle"]
-[connection signal="ball_hit_paddle" from="Opponent" to="." method="_on_opponent_ball_hit_paddle"]
+[connection signal="ball_hit_paddle" from="OpponentPaddle" to="." method="_on_player_ball_hit_paddle"]
 [connection signal="ball_hit_bumper" from="OutsideWindowElements/Bumper" to="." method="_on_bumper_ball_hit_bumper"]
 [connection signal="ball_hit_bumper" from="OutsideWindowElements/Bumper2" to="." method="_on_bumper_2_ball_hit_bumper"]
 [connection signal="goal_score_opponent" from="OutsideWindowElements/GoalZoneOpponent" to="." method="_on_goal_zone_opponent_goal_score_opponent"]
