@@ -1,11 +1,16 @@
 extends Paddle
 
-@export var paddle_speed_opponent = 19000
+@export var paddle_speed_opponent = 35000
 @export var ball : Ball
 
 func _physics_process(delta):
-	var direction = (ball.position - position).normalized()
-	linear_velocity.y = direction.y * paddle_speed_opponent * delta
+	if ball != null:
+		var direction = (ball.position - position).normalized()
+		linear_velocity.y = direction.y * paddle_speed_opponent * delta
+	else:
+		linear_velocity = Vector2(0, 0)
+		global_position = Vector2(1096, 648/2)
+	
 	
 	
 #func _process(delta):

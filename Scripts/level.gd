@@ -1,13 +1,18 @@
 extends Node2D
 
-#@onready var ball_reference : Ball = get_node("res://Scenes/ball.tscn")
+@onready var ui = $UI
+@onready var hud = $UI/HUD
 @onready var player = $Player
 @onready var ball = $Ball
 @onready var opponent = $Opponent
 
-func _ready() -> void:
-	pass 
+var score_player = 0
+var score_opponent = 0
 
+func _ready() -> void:
+	hud.set_score_player_label(score_player)
+	hud.set_score_opponent_label(score_opponent)
+	
 func _process(delta: float) -> void:
 	pass
 
@@ -47,12 +52,22 @@ func _process(delta: float) -> void:
 # Goal / Scoring handling
 
 func _on_goal_zone_opponent_goal_score_opponent():
-	pass # Replace with function body.
+	_opponent_scored()
 
 
 func _on_goal_zone_player_goal_score_player():
-	pass # Replace with function body.
+	_player_scored()
 
 
 func _on_ball_body_entered(body: Node) -> void:
 	pass # Replace with function body.
+
+
+func _player_scored():
+	score_player += 1
+	hud.set_score_player_label(score_player)
+	
+	
+func _opponent_scored():
+	score_opponent += 1
+	hud.set_score_opponent_label(score_opponent)

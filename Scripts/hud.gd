@@ -1,11 +1,13 @@
 extends Control
 
+@onready var score_player = $ScorePlayer
+@onready var score_opponent = $ScoreOpponent
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
+func set_score_player_label(new_score_player):
+	score_player.text = str(score_player) + " :  "
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func set_score_opponent_label(new_score_opponent):
+	score_opponent.text = str(score_opponent)

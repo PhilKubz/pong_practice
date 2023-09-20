@@ -2,6 +2,8 @@ extends Paddle
 
 class_name Player
 
+@export var ball : Ball
+
 func _ready():
 	pass
 	# print("player exists")
@@ -15,6 +17,7 @@ func _process(delta):
 		movement = Vector2.DOWN
 	
 	linear_velocity = movement * paddle_speed
+	
 
 #func _on_body_entered(body):
 #	if body is Ball:
